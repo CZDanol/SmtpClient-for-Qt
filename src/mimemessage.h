@@ -62,6 +62,7 @@ public:
     const QString & getSubject() const;
     const QList<MimePart*> & getParts() const;
     const EmailAddress* getReplyTo() const;
+		void addHeader(const QString &header);
 
     MimePart& getContent();
     void setContent(MimePart *content);

@@ -113,6 +113,11 @@ void MimeMessage::setHeaderEncoding(MimePart::Encoding hEnc)
     this->hEncoding = hEnc;
 }
 
+void MimeMessage::addHeader(const QString &header)
+{
+	this->header += header;
+}
+
 const EmailAddress & MimeMessage::getSender() const
 {
     return *sender;
@@ -280,6 +285,7 @@ QString MimeMessage::toString()
     /* ---------------------------------- */
 
     mime += "MIME-Version: 1.0\r\n";
+	mime += header;
 
     mime += content->toString();
     return mime;
